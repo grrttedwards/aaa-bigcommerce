@@ -18,7 +18,7 @@ function formatPhone(e) {
     e.target.value = formattedPhone;
 }
 
-var phoneInput = document.getElement("input[data-label='Phone']");
+var phoneInput = document.getElement("input[data-label='Cell Phone Number']");
 if (phoneInput) {
     phoneInput.addEventListener('input', formatPhone)
 }
