@@ -3,11 +3,21 @@ function formatPhone(e) {
     var cleanR = /(\D+)/g;
     cleaned = input.replace(cleanR, '');
 
-    areacode = cleaned.substr(0, 3);
-    prefix = cleaned.substr(3, 3);
-    last4 = cleaned.substr(6, 4);
+    countrycode = cleaned.substr(0, 1);
+
+    if (countrycode === "1") {
+        areacode = cleaned.substr(1, 3);
+        prefix = cleaned.substr(4, 3);
+        last4 = cleaned.substr(7, 4);
+    }
+    else {
+        areacode = cleaned.substr(0, 3);
+        prefix = cleaned.substr(3, 3);
+        last4 = cleaned.substr(6, 4);
+    }
 
     var formattedPhone =
+        (countrycode === "1" ? countrycode + " " : "") +
         (areacode ? '(' : '') +
         areacode +
         (prefix ? ') ' : '') +
