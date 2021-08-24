@@ -23,7 +23,7 @@ if (phoneInput) {
     phoneInput.addEventListener('input', formatPhone)
 }
 
-var phoneInputCheckout = document.querySelector("input[id='phoneInput']");
+var phoneInputCheckout = document.getElementById("phoneInput");
 if (phoneInputCheckout) {
     phoneInputCheckout.addEventListener('input', formatPhone)
 }
