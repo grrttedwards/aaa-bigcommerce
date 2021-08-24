@@ -22,3 +22,8 @@ var phoneInput = document.querySelector("input[data-label='Cell Phone Number']")
 if (phoneInput) {
     phoneInput.addEventListener('input', formatPhone)
 }
+
+var phoneInputCheckout = document.querySelector("input[id='phoneInput']");
+if (phoneInputCheckout) {
+    phoneInputCheckout.addEventListener('input', formatPhone)
+}
