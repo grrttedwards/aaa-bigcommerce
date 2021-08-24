@@ -23,7 +23,31 @@ if (phoneInput) {
     phoneInput.addEventListener('input', formatPhone)
 }
 
-var phoneInputCheckout = document.getElementById("phoneInput");
-if (phoneInputCheckout) {
-    phoneInputCheckout.addEventListener('input', formatPhone)
+
+// also listen 
+function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                resolve(document.querySelector(selector));
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
 }
+
+waitForElm("#phoneInput").then(elm => elm.addEventListener('input', formatPhone));
+
+// var phoneInputCheckout = document.getElementById("phoneInput");
+// if (phoneInputCheckout) {
+//     phoneInputCheckout.addEventListener('input', formatPhone)
+// }
