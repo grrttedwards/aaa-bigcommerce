@@ -55,7 +55,7 @@ function waitForElm(selector) {
     });
 }
 
-waitForElm("#phoneInput").then(elm => elm.addEventListener('input', formatPhone));
+// waitForElm("#phoneInput").then(elm => elm.addEventListener('input', formatPhone));
 
 // var phoneInputCheckout = document.getElementById("phoneInput");
 // if (phoneInputCheckout) {
