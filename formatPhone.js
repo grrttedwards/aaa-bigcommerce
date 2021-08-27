@@ -17,7 +17,7 @@ function formatPhone(e) {
     }
 
     var formattedPhone =
-        (countrycode === "1" ? countrycode + " " : "") +
+        (countrycode === "1" ? countrycode + (areacode ? " " : "") : "") +
         (areacode ? '(' : '') +
         areacode +
         (prefix ? ') ' : '') +
