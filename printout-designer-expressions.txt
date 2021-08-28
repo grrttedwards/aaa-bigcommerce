@@ -1,0 +1,17 @@
+{% "(" ~ 
+substr(str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' '], 
+"", lowercase({billing_address::phone})) % 10000000000, 0, 3) ~ ") " ~ 
+substr(str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' '], 
+"", lowercase({billing_address::phone})) % 10000000000, 3, 3) ~ "-" ~ 
+substr(str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' '], 
+"", lowercase({billing_address::phone})) % 10000000000, 6, 15) 
+%}
+
+{% "(" ~ 
+substr(str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' '], 
+"", lowercase({shipping_address::phone})) % 10000000000, 0, 3) ~ ") " ~ 
+substr(str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' '], 
+"", lowercase({shipping_address::phone})) % 10000000000, 3, 3) ~ "-" ~ 
+substr(str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' '], 
+"", lowercase({shipping_address::phone})) % 10000000000, 6, 15) 
+%}
