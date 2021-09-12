@@ -13,8 +13,8 @@ formContainer.appendChild(thumbnailHref);
 
 
 
-fetch("https://docs.google.com/uc?export=download&id=19apjw9P48_DBege9NK_2QXUHDXiyEBt0", {})
-  .then(response => response.text())
+fetch("https://docs.google.com/uc?export=download&id=19apjw9P48_DBege9NK_2QXUHDXiyEBt0", {mode: "no-cors"})
+  .then(response => response.json())
   .then(files => {
     for (const file of files) {
         console.log(file)
