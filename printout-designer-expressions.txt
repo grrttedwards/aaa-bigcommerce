@@ -1,3 +1,7 @@
+# Loaded in the bigcommerce printout designer app for the billing phone and the shipping phone
+# Why do I have [a-zA-Z] at the end of the test pattern? Something with the end of the text string actually having some secret characters?
+# It's important, either way
+
 {% str_replace(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','(',')','-',' ','.',':','+'], 
 "", lowercase({billing_address::phone})) matches "/^1*[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][a-zA-Z]*$/" ? (
 "(" ~ 
